@@ -6,8 +6,11 @@ import javax.inject.Inject;
 
 public class DieselEngine implements Engine{
 
-    @Inject
-    public DieselEngine() {
+    // Now have a variable that needs to be provided at run time
+    private int horsePower;
+
+    public DieselEngine(int horsePower) {
+        this.horsePower = horsePower;
     }
 
     @Override
