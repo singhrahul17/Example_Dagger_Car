@@ -14,8 +14,7 @@ import javax.inject.Inject;
 public class MainActivity extends AppCompatActivity {
 
     // Field injection
-    @Inject
-    Car car;
+    @Inject Car car;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +22,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         CarComponent carComponent = DaggerCarComponent.builder()
-                .dieselEngineModule(new DieselEngineModule(120))
+                .horsePower(120)
+                .engineCapacity(1200)
                 .build();
+
         carComponent.inject(this);
 
-        car = carComponent.getCar();
+        //car = carComponent.getCar();
         car.driving();
     }
 }

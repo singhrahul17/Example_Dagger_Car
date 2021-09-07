@@ -9,12 +9,13 @@ public class DieselEngine implements Engine{
     // Now have a variable that needs to be provided at run time
     private int horsePower;
 
+    @Inject
     public DieselEngine(int horsePower) {
         this.horsePower = horsePower;
     }
 
     @Override
     public void start() {
-        Log.d("Car", "Diesel engine started");
+        Log.d("Car", "Diesel engine started with horse power : "+horsePower);
     }
 }
